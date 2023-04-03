@@ -7,11 +7,8 @@
  */
 int print_char(va_list arg)
 {
-	int value = va_arg(arg, int);
-
 	putchar(va_arg(arg, int));
 	return (1);
-
 }
 
 /**
