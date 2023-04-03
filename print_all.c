@@ -6,7 +6,6 @@
 void print_char(va_list arg)
 {
 	putchar(va_arg(arg, int));
-	return (1);
 }
 
 /**
@@ -16,8 +15,6 @@ void print_char(va_list arg)
 void print_float(va_list arg)
 {
 	putchar(va_arg(arg, double));
-
-	return (1);
 }
 
 /**
@@ -35,7 +32,6 @@ void print_str(va_list arg)
 	for (i = 0; string[i]; i++)
 		putchar(string[i]);
 
-	return (i);
 }
 
 /**
@@ -47,5 +43,4 @@ void print_mod(va_list arg)
 	(void)arg;
 
 	putchar('%');
-	return (1);
 }
