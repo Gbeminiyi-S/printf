@@ -15,14 +15,14 @@
 typedef struct prvoid_format
 {
 	char symbol;
-	void (*print)(va_list arg);
+	int (*print)(va_list arg);
 } prt;
 
-void print_char(va_list arg);
-void print_mod(va_list arg);
-void print_void(va_list arg);
-void print_float(va_list arg);
-void print_str(va_list arg);
+int print_char(va_list arg);
+int print_mod(va_list arg);
+int print_void(va_list arg);
+int print_float(va_list arg);
+int print_str(va_list arg);
 int _printf(const char *format, ...);
 
 #endif

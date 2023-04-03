@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == format_funcs[j].symbol)
 				{
-					format_funcs[j].print(list);
+					str_len += format_funcs[j].print(list);
 					break;
 				}
 				j++;
@@ -40,5 +40,5 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	return (1);
+	return (str_len);
 }
