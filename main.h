@@ -7,12 +7,12 @@
 #include <stdarg.h>
 
 /**
- * struct prvoid_format - format of char and func. povoider
- * @symbol: prvoid specifier
- * @prvoid: povoider to specifier function
+ * struct print_format - format of char and func. povoider
+ * @symbol: print specifier
+ * @print: pointer to specifier function
  *
  */
-typedef struct prvoid_format
+typedef struct print_format
 {
 	char symbol;
 	int (*print)(va_list arg);

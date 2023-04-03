@@ -2,10 +2,17 @@
 /**
  * print_char - prints a ASCII character
  * @arg: argument to be printed
+ *
+ * Return: count of characters
  */
 int print_char(va_list arg)
 {
-	putchar(va_arg(arg, int));
+	int value = va_arg(arg, int);
+
+	if (!value)
+		putchar('\0');
+	else
+		putchar(value);
 
 	return (1);
 }
@@ -13,6 +20,8 @@ int print_char(va_list arg)
 /**
  * print_float - prints a float number
  * @arg: argument to be printed
+ *
+ * Return: count of characters
  */
 int print_float(va_list arg)
 {
@@ -24,6 +33,8 @@ int print_float(va_list arg)
 /**
  * print_str - prints a string
  * @arg: argument to be printed
+ *
+ * Return: count of characters
  */
 int print_str(va_list arg)
 {
@@ -42,6 +53,8 @@ int print_str(va_list arg)
 /**
  * print_mod - prints modulus
  * @arg: argument to be printed
+ *
+ * Return: count of characters
  */
 int print_mod(va_list arg)
 {
