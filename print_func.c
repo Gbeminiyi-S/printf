@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			}
 			if (flag == 0)
 			{
-				putchar(format[i]);
+				putchar(format[--i]);
                         	str_len++;
 			}
 		}
