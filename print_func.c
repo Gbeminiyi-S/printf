@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, j, str_len = 0;
+	int i = 0, j, str_len = 0, flag = 0;
 	prt format_funcs[] = {
 		{'c', print_char},
 		{'f', print_float},
@@ -33,9 +33,15 @@ int _printf(const char *format, ...)
 				if (format[i] == format_funcs[j].symbol)
 				{
 					str_len += format_funcs[j].print(list);
+					flag = 1;
 					break;
 				}
 				j++;
+			}
+			if (flag == 0)
+			{
+				putchar(format[i]);
+                        	str_len++;
 			}
 		}
 		i++;
