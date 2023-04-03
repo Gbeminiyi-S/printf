@@ -31,7 +31,7 @@ int print_str(va_list arg)
 	int i;
 
 	if (!string)
-		string = "(nil)";
+		string = "(null)";
 
 	for (i = 0; string[i]; i++)
 		putchar(string[i]);
