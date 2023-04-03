@@ -9,16 +9,9 @@ int print_char(va_list arg)
 {
 	int value = va_arg(arg, int);
 
-	if (!value)
-	{
-		putchar(1);
-		return (0);
-	}
-	else
-	{
-		putchar(value);
-		return (1);
-	}
+	putchar(va_arg(arg, int));
+	return (1);
+
 }
 
 /**
