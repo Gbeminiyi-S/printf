@@ -17,6 +17,9 @@ int _printf(const char *format, ...)
 		{'%', print_mod},
 	};
 
+	if (format == NULL)
+		return (0);
+
 	va_start(list, format);
 	while (format[i] != '\0')
 	{
