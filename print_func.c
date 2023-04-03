@@ -16,10 +16,8 @@ int _printf(const char *format, ...)
 		{'s', print_str},
 		{'%', print_mod},
 	};
-
 	if (format == NULL)
-		return (0);
-
+		return (-1);
 	va_start(list, format);
 	while (format[i] != '\0')
 	{
