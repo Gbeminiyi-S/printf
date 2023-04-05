@@ -63,21 +63,24 @@ int print_int(va_list arg)
 		putchar('-');
 		value *= -1;
 	}
-	int_helper(value);
-
-	return (0);
+	return(int_helper(value));
 }
 
 /**
  * int_helper - helper function
  * @value: argument to be printed
  */
-void int_helper(int value)
+int int_helper(int value)
 {
-	int a = value;
+	int a = value, count = 1;
 
 	if (value > 9)
+	{
+		count++;
 		int_helper(value / 10);
+	}
+	count++;
 
 	putchar((a % 10) + '0');
+	return (count);
 }
