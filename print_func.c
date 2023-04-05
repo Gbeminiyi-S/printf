@@ -15,6 +15,8 @@ int _printf(const char *format, ...)
 		{'f', print_float},
 		{'s', print_str},
 		{'%', print_mod},
+		{'i', print_int},
+		{'d', print_int},
 	};
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
@@ -29,20 +31,18 @@ int _printf(const char *format, ...)
 		else
 		{
 			j = 0, i++;
-			while (j < 4)
+			while (j < 6)
 			{
 				if (format[i] == format_funcs[j].symbol)
 				{
 					str_len += format_funcs[j].print(list);
-					flag = 1;
-					break;
+					flag = 1, break;
 				}
 				j++;
 			}
 			if (flag == 0)
 			{
-				putchar(format[--i]);
-				str_len++;
+				putchar(format[--i]), str_len++;
 			}
 		}
 		i++;
