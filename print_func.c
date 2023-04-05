@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 	int i = 0, j, str_len = 0, flag = 0;
 	prt format_funcs[] = {
 		{'c', print_char},
-		{'f', print_float},
 		{'s', print_str},
 		{'%', print_mod},
 		{'i', print_int},
@@ -25,8 +24,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			putchar(format[i]);
-			str_len++;
+			putchar(format[i]), str_len++;
 		}
 		else
 		{
@@ -36,7 +34,8 @@ int _printf(const char *format, ...)
 				if (format[i] == format_funcs[j].symbol)
 				{
 					str_len += format_funcs[j].print(list);
-					flag = 1, break;
+					flag = 1;
+					break;
 				}
 				j++;
 			}
