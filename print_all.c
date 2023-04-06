@@ -56,7 +56,6 @@ int print_mod(va_list arg)
 int print_int(va_list arg)
 {
 	int value = va_arg(arg, int);
-	int count = 0;
 
 	if (value < 0)
 	{
@@ -83,4 +82,4 @@ int int_helper(int value)
 
 	putchar((a % 10) + '0');
 	return (count);
-
+}
