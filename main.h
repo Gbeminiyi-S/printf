@@ -25,6 +25,6 @@ int print_float(va_list arg);
 int print_str(va_list arg);
 int _printf(const char *format, ...);
 int print_int(va_list arg);
-int int_helper(int value);
+int int_helper(unsigned int value);
 
 #endif

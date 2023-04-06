@@ -56,12 +56,13 @@ int print_mod(va_list arg)
 int print_int(va_list arg)
 {
 	int value = va_arg(arg, int);
+	unsigned int neg_value;
 
 	if (value < 0)
 	{
 		putchar('-');
-		value *= -1;
-		return (1 + int_helper(value));
+		neg_value = value * -1;
+		return (1 + int_helper(neg_value));
 	}
 	return (int_helper(value));
 }
@@ -72,9 +73,9 @@ int print_int(va_list arg)
  *
  * Return: cars printed
  */
-int int_helper(int value)
+int int_helper(unsigned int value)
 {
-	int a = value, count = 0;
+	unsigned int a = value, count = 0;
 
 	if (value < 9)
 	{
