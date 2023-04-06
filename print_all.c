@@ -77,7 +77,10 @@ int int_helper(int value)
 	int a = value, count = 0;
 
 	if (value < 9)
+	{
+		putchar((a % 10) + '0');
 		return (1);
+	}
 	count = 1 + int_helper(value / 10);
 
 	putchar((a % 10) + '0');
