@@ -23,7 +23,6 @@ int print_str(va_list arg)
 	char *string = va_arg(arg, char *);
 	int i;
 
-	printf("\n%s\n", "Mamuro");
 	if (!string)
 		string = "(null)";
 
@@ -57,30 +56,31 @@ int print_mod(va_list arg)
 int print_int(va_list arg)
 {
 	int value = va_arg(arg, int);
+	int count = 0;
 
 	if (value < 0)
 	{
 		putchar('-');
 		value *= -1;
+		return (1 + int_helper(value));
 	}
-	return(int_helper(value));
+	return (int_helper(value));
 }
 
 /**
  * int_helper - helper function
  * @value: argument to be printed
+ *
+ * Return: cars printed
  */
 int int_helper(int value)
 {
-	int a = value, count = 1;
+	int a = value, count = 0;
 
-	if (value > 9)
-	{
-		count++;
-		int_helper(value / 10);
-	}
-	count++;
+	if (value < 9)
+		return (1);
+	count = 1 + int_helper(value / 10);
 
 	putchar((a % 10) + '0');
 	return (count);
-}
+
