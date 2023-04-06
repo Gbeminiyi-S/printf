@@ -61,6 +61,7 @@ int print_int(va_list arg)
 	if (value < 0)
 	{
 		putchar('-');
+		/* to take care of large unsigned int values */
 		neg_value = value * -1;
 		return (1 + int_helper(neg_value));
 	}
@@ -71,7 +72,7 @@ int print_int(va_list arg)
  * int_helper - helper function
  * @value: argument to be printed
  *
- * Return: cars printed
+ * Return: chars printed
  */
 int int_helper(unsigned int value)
 {
