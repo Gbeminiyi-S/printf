@@ -34,5 +34,6 @@ int print_binary(va_list arg)
 			str[len - i - 1] = '0';
 		putchar(str[len - i - 1]);
 	}
+	free(str);
 	return (len);
 }
