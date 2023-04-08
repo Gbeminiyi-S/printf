@@ -25,6 +25,8 @@ int print_binary(va_list arg)
 	}
 
 	str = malloc(sizeof(char *) * len);
+	if (!str)
+		return (0);
 	for (i = len - 1; i >= 0; i--)
 	{
  		k = num >> i;
