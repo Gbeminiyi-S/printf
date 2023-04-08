@@ -17,6 +17,8 @@ int print_binary(va_list arg)
 	else
 	{
 		num_copy = num;
+		if (num_copy == 0)
+			len++;
 		while (num_copy > 0)
  		{
         		num_copy /= 2;
