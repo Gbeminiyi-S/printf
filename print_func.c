@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{'%', print_mod},
 		{'i', print_int},
 		{'d', print_int},
+		{'b', print_binary}
 	};
 	/* check for format = NULL OR format = "%" */
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
