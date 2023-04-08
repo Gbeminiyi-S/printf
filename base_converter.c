@@ -34,8 +34,5 @@ int print_binary(va_list arg)
 			str[len - i - 1] = '0';
 		putchar(str[len - i - 1]);
 	}
-	if (num < 0)
-		return (len - 1);
-	else
-		return (len);
+	return (len);
 }
