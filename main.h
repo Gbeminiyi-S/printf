@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
+#include <math.h>
 
 /**
  * struct print_format - format of char and func. povoider
@@ -27,5 +28,9 @@ int _printf(const char *format, ...);
 int print_int(va_list arg);
 int print_binary(va_list arg);
 int int_helper(unsigned int value);
+int print_udecimal(va_list arg);
+char* print_binary_helper(char *str, int len, int num);
+int print_udecimal(va_list arg);
+int print(int, unsigned long int value);
 
 #endif

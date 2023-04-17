@@ -8,8 +8,8 @@
  */
 int print_binary(va_list arg)
 {
-	int num = va_arg(arg, int);
-	int len = 0, num_copy, i, k;
+	int num = va_arg(arg, int), i;
+	int len = 0, num_copy;
 	char *str = NULL;
 
 	if (num < 0)
@@ -25,6 +25,18 @@ int print_binary(va_list arg)
  			len++;
  		}
 	}
+	str = print_binary_helper(str, len, num);
+
+	for (i = len - 1; i >= 0; i--)	
+		putchar(str[len - i - 1]);
+	
+	free(str);
+	return (len);
+}
+	
+char *print_binary_helper(char *str, int len, int num)
+{
+	int i, k;
 
 	str = malloc(sizeof(char *) * len);
 	if (!str)
@@ -36,8 +48,6 @@ int print_binary(va_list arg)
 			str[len - i - 1] = '1';
 		else
 			str[len - i - 1] = '0';
-		putchar(str[len - i - 1]);
 	}
-	free(str);
-	return (len);
+	return (str);
 }
