@@ -1,6 +1,30 @@
 #include "main.h"
 
 /**
+ * binary_len: finds the length of the resulting binary
+ * num: number to be converted to binary
+ *
+ * Return: length of the binary
+ */
+int binary_len(int num)
+{
+	int len = 0;
+
+	if (num < 0)
+                len = 32;
+        else
+        {
+                if (num == 0)
+                        len++;
+                while (num > 0)
+                {
+                        num /= 2;
+                        len++;
+                }
+        }
+	return (len);
+}
+/**
  * print_binary - converts an integer to a binary
  * @arg: argument to be printed
  *
@@ -9,22 +33,10 @@
 int print_binary(va_list arg)
 {
 	int num = va_arg(arg, int), i;
-	int len = 0, num_copy;
+	int len;
 	char *str = NULL;
 
-	if (num < 0)
-		len = 32;
-	else
-	{
-		num_copy = num;
-		if (num_copy == 0)
-			len++;
-		while (num_copy > 0)
- 		{
-        		num_copy /= 2;
- 			len++;
- 		}
-	}
+	len = binary_len(num);
 	str = print_binary_helper(str, len, num);
 
 	for (i = len - 1; i >= 0; i--)	

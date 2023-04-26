@@ -19,7 +19,7 @@ typedef struct print_format
 	int (*print)(va_list arg);
 } prt;
 
-int print_char(va_list ari);
+int print_char(va_list arg);
 int print_mod(va_list arg);
 int print_void(va_list arg);
 int print_float(va_list arg);
@@ -28,9 +28,12 @@ int _printf(const char *format, ...);
 int print_int(va_list arg);
 int print_binary(va_list arg);
 int int_helper(unsigned int value);
+int binary_len(int num);
 int print_udecimal(va_list arg);
 char* print_binary_helper(char *str, int len, int num);
 int print_udecimal(va_list arg);
 int print(int, unsigned long int value);
+int print_octal(va_list arg);
+int print_ustr(va_list arg);
 
 #endif
