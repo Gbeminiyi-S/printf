@@ -33,8 +33,6 @@ int print_udecimal(va_list arg)
         }
 
 	str = print_binary_helper(str, len, num);
-	if (!str)
-		return (0);
 
         for (i = len - 1; i >= 0; i--)
 	{
