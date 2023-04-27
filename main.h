@@ -35,6 +35,7 @@ int print_udecimal(va_list arg);
 int print(int, unsigned long int value);
 int print_octal(va_list arg);
 int print_ustr(va_list arg);
-int print_octet(va_list arg)
-	
+int print_octet(va_list arg);
+int octet_helper(int num);
+
 #endif
