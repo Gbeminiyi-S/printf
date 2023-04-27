@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_binary - converts an integer to a binary
+ * print_udecimal - converts an integer to unsigned decimal
  * @arg: argument to be printed
  *
  * Return: count of characters
@@ -17,26 +17,26 @@ int print_udecimal(va_list arg)
 	{
 		putchar('0');
 		return (1);
-	}	
-        if (num < 0)
-                len = 32;
-        else
-        {
-                num_copy = num;
-                if (num_copy == 0)
-                        len++;
-                while (num_copy > 0)
-                {
-                        num_copy /= 2;
-                        len++;
-                }
-        }
+	}
+	if (num < 0)
+		len = 32;
+	else
+	{
+		num_copy = num;
+		if (num_copy == 0)
+			len++;
+		while (num_copy > 0)
+		{
+			num_copy /= 2;
+			len++;
+		}
+	}
 
 	str = print_binary_helper(str, len, num);
 
-        for (i = len - 1; i >= 0; i--)
+	for (i = len - 1; i >= 0; i--)
 	{
-                value += (int)(str[i] - 48) * power;
+		value += (int)(str[i] - 48) * power;
 		power *= 2;
 	}
 	len = print(0, value);
@@ -44,11 +44,18 @@ int print_udecimal(va_list arg)
 	return (len);
 }
 
-int print(int i, unsigned long int value)
+/**
+ * print_ud - prints the undigned decimal
+ * @len: counter
+ * @value: value
+ *
+ * Return: count of characters
+ */
+int print_ud(int len, unsigned long int value)
 {
 	if (value == 0)
-		return 0;
-	i = 1 + print(i, value / 10);
+		return (0);
+	len = 1 + print(i, value / 10);
 	putchar((value % 10) + '0');
-	return (i);
+	return (len);
 }

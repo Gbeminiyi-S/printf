@@ -32,7 +32,7 @@ int binary_len(int num);
 int print_udecimal(va_list arg);
 char* print_binary_helper(char *str, int len, int num);
 int print_udecimal(va_list arg);
-int print(int, unsigned long int value);
+int print_ud(int, unsigned long int);
 int print_octal(va_list arg);
 int print_ustr(va_list arg);
 
