@@ -39,7 +39,7 @@ int print_udecimal(va_list arg)
 		value += (int)(str[i] - 48) * power;
 		power *= 2;
 	}
-	len = print(0, value);
+	len = print_ud(0, value);
 	free(str);
 	return (len);
 }
@@ -55,7 +55,7 @@ int print_ud(int len, unsigned long int value)
 {
 	if (value == 0)
 		return (0);
-	len = 1 + print(i, value / 10);
+	len = 1 + print_ud(len, value / 10);
 	putchar((value % 10) + '0');
 	return (len);
 }
