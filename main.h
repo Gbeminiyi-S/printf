@@ -35,5 +35,6 @@ int print_udecimal(va_list arg);
 int print_ud(int, unsigned long int);
 int print_octal(va_list arg);
 int print_ustr(va_list arg);
+int print_pointer(va_list arg);
 
 #endif
