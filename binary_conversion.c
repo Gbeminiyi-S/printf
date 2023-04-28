@@ -38,6 +38,8 @@ int print_binary(va_list arg)
 
 	len = binary_len(num);
 	str = print_binary_helper(str, len, num);
+	if (!str)
+		return (0);
 
 	for (i = len - 1; i >= 0; i--)
 		putchar(str[len - i - 1]);
